@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 3,
   "description": "This extension was created to automatically log into the Parker Portal, so I can save a lot of time.",
-  "homepage_url": "https://github.com/js802025/PortalAutoLogin",
+  "homepage_url": "https://github.com/js802025/portalautologin",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
