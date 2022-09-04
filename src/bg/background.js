@@ -1,13 +1,21 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
-
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
 
 
-//example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse();
-  });
+
+chrome.storage.local.get(['store'], function(data) {
+    console.log(data);
+})
+
+window.onload=function(){
+  chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+    var result = settings.toObject();
+          if (request.action == "getUsername"){
+       chrome.tabs.sendMessage(sender.tab.id, {user :result.username}, function(response) {
+             });
+            } else if (request.action == "signIn"){
+              chrome.tabs.sendMessage(sender.tab.id, {pass : result.password}, function(response) {
+             });
+            }
+          })
+
+ 
+  }
