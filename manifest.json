@@ -1,38 +1,16 @@
 {
   "name": "PortalAutoLogin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "description": "This extension was created to automatically log into the Parker Portal, so I can save a lot of time.",
   "homepage_url": "https://github.com/js802025/portalautologin",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "default_locale": "en",
-  "background": {
-    "service_worker": 
-      "background.js",
-      "type": "module"
-  },
-  "options_page": "src/options/options.html",
-  "permissions": [
-    "tabs", "storage"
-  ],
   "content_scripts": [
     {
       "matches": [
         "https://fwparker.myschoolapp.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
-      ]
-    }, {
-      "matches": [
-        "https://auth1.fwparker.org/*"
-      ],
-      "js": [
-        "src/inject/signIn.js"
+        "foreground.js"
       ]
     }
   ]
