@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://fwparker.myschoolapp.com/*"
+        "https://app.blackbaud.com/*"
       ],
       "js": [
         "foreground.js"
